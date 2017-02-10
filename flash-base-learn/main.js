@@ -1,7 +1,7 @@
 /**
- * Created by pengxiang on 2016/7/26.
+ * Created by Administrator on 2016/2/23.
  */
-var canvas,img,stage,model,stageWidth,stageHeight,stageScale,view,cls={};
+var canvas,img,stage,model,stageWidth,stageHeight,stageScale,view1,cls={};
 
 model = new createjs.EventDispatcher();
 stageWidth =  document.documentElement.clientWidth;
@@ -46,9 +46,12 @@ function loadCompleteHandler(event)
     model.addEventListener("complete",function (){
         alert("complete");
     })
+    view1 = new cls.View1();
+    stage.addChild(view1);
 
-    view = new cls.View();
-    stage.addChild(view);
+//    view1= new lib.view1();
+//    stage.addChild(view1);
+
 }
 function stageBreakHandler(event)
 {
@@ -73,39 +76,20 @@ function stageBreakHandler(event)
     }
     stage.update();
 }
-//view
+//view1
 (function() {
     "use strict";
-    function View(){
+    function View1(){
         this.Container_constructor();
 
-        this.back = new lib.page();
+        this.back = new lib.view1();
         this.addChild(this.back);
         this.show = function (){
 
             //这里可以写额外的方法
         }
         //this.con = new createjs.Container() 这里可以是额外处理的对象
-
-        //在这个js里新new的Text对象，
-        this.htext = new createjs.Text("Hello World", "60px Arial", "#ff7700");
-        this.htext.x = 200;
-        this.htext.y = 700;
-        this.htext.textBaseline = "alphabetic";
-        this.back.addChild(this.htext);
-
-        //操纵 animate内部变量
-        //一、给 变量赋值
-        this.back.txt_1.text = "page里的文本txt_1";
-        this.back.mc_1.txt.text = "page里元件mc_1里的文本txt";
-
-        //二、new 库中class
-        this.mc_2 = new lib.mc1();
-        this.mc_2.txt.text = "这个是用代码new的animate库里的元件mc1，生成的新元件mc_2";
-        this.mc_2.x = 100;
-        this.mc_2.y = 890;
-        this.back.addChild(this.mc_2);
     }
-    var p = createjs.extend(View,createjs.Container);
-    cls.View = createjs.promote(View, "Container");
+    var p = createjs.extend(View1,createjs.Container);
+    cls.View1 = createjs.promote(View1, "Container");
 }());
