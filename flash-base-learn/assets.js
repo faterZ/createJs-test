@@ -9,16 +9,16 @@ lib.properties = {
 	fps: 24,
 	color: "#FFFFFF",
 	manifest: [
-		{src:"images/_01_0000_logo01.png", id:"_01_0000_logo01"},
-		{src:"images/_01_0000_text01_01.png", id:"_01_0000_text01_01"},
-		{src:"images/_01_0001_rocket.png", id:"_01_0001_rocket"},
-		{src:"images/_01_0001_text01_02.png", id:"_01_0001_text01_02"},
-		{src:"images/_01_0002_rocketfire.png", id:"_01_0002_rocketfire"},
-		{src:"images/_01_0002_text01_03.png", id:"_01_0002_text01_03"},
-		{src:"images/_01_0003_DREAM.png", id:"_01_0003_DREAM"},
-		{src:"images/_01_0005_plane.png", id:"_01_0005_plane"},
-		{src:"images/_01_0006_BJ.jpg", id:"_01_0006_BJ"},
-		{src:"images/arrow.png", id:"arrow"}
+		{src:"images/_01_0000_logo01.png?1486748856687", id:"_01_0000_logo01"},
+		{src:"images/_01_0000_text01_01.png?1486748856687", id:"_01_0000_text01_01"},
+		{src:"images/_01_0001_rocket.png?1486748856687", id:"_01_0001_rocket"},
+		{src:"images/_01_0001_text01_02.png?1486748856687", id:"_01_0001_text01_02"},
+		{src:"images/_01_0002_rocketfire.png?1486748856687", id:"_01_0002_rocketfire"},
+		{src:"images/_01_0002_text01_03.png?1486748856687", id:"_01_0002_text01_03"},
+		{src:"images/_01_0003_DREAM.png?1486748856687", id:"_01_0003_DREAM"},
+		{src:"images/_01_0005_plane.png?1486748856687", id:"_01_0005_plane"},
+		{src:"images/_01_0006_BJ.jpg?1486748856687", id:"_01_0006_BJ"},
+		{src:"images/arrow.png?1486748856687", id:"arrow"}
 	]
 };
 
@@ -88,139 +88,151 @@ p.nominalBounds = new cjs.Rectangle(0,0,750,1334);
 p.nominalBounds = new cjs.Rectangle(0,0,98,98);
 
 
-(lib.text01_04 = function() {
-	this.initialize();
+(lib.text01_04 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("rgba(255,209,111,0.8)").s().p("EgqFAjeQi5AAiDiKQiDiKAAjCMAAAg4OQAAjECDiJQCDiKC5AAMBULAAAQC5AACDCKQCDCJAADEMAAAA4OQAADCiDCKQiDCKi5AAg");
 	this.shape.setTransform(314.1,227.1);
 
-	this.addChild(this.shape);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,628.3,454.1);
 
 
-(lib.text01_03 = function() {
-	this.initialize();
+(lib.text01_03 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0002_text01_03();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,555,146);
 
 
-(lib.text01_01 = function() {
-	this.initialize();
+(lib.text01_01 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0000_text01_01();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,552,90);
 
 
-(lib.text_01_02 = function() {
-	this.initialize();
+(lib.text_01_02 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0001_text01_02();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,554,90);
 
 
-(lib.rocket = function() {
-	this.initialize();
+(lib.rocket = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0001_rocket();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,214,220);
 
 
-(lib.plane = function() {
-	this.initialize();
+(lib.plane = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0005_plane();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,466,414);
 
 
-(lib.ocketfire = function() {
-	this.initialize();
+(lib.ocketfire = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0002_rocketfire();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,123,124);
 
 
-(lib.logo = function() {
-	this.initialize();
+(lib.logo = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0000_logo01();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,474,335);
 
 
-(lib.dream = function() {
-	this.initialize();
+(lib.dream = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0003_DREAM();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,340,394);
 
 
-(lib.BJ = function() {
-	this.initialize();
+(lib.BJ = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib._01_0006_BJ();
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,750,1334);
 
 
-(lib.mc2 = function() {
-	this.initialize();
+(lib.mc2 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.instance = new lib.arrow();
 	this.instance.setTransform(-49,-49);
 
-	this.addChild(this.instance);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-49,-49,98,98);
 
 
-(lib.mc1 = function() {
-	this.initialize();
+(lib.mc1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
 	// 图层 1
 	this.shape = new cjs.Shape();
 	this.shape.graphics.f("rgba(0,0,0,0.008)").s().p("Eg6lBeOMAAAi8bMB1LAAAMAAAC8bg");
 
-	this.addChild(this.shape);
-}).prototype = p = new cjs.Container();
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-375,-603,750,1206);
 
 
@@ -267,13 +279,16 @@ p.nominalBounds = new cjs.Rectangle(-49,-49,98,98);
 		      _this.play();
 		      })
 	}
-	this.frame_115 = function() {
+	this.frame_45 = function() {
+		if(model) model.dispatchEvent("textready");
+	}
+	this.frame_116 = function() {
 		this.stop();
 		if(model) model.dispatchEvent("complete");
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(115).call(this.frame_115).wait(87));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(45).call(this.frame_45).wait(71).call(this.frame_116).wait(86));
 
 	// 图层 2
 	this.btn = new lib.mc1();
@@ -364,10 +379,10 @@ p.nominalBounds = new cjs.Rectangle(0,0,750,1245.7);
 
 
 
-(lib.assets = function() {
-	this.initialize();
+(lib.assets = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
 
-}).prototype = p = new cjs.Container();
+}).prototype = p = new cjs.MovieClip();
 p.nominalBounds = null;
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{}, ss = ss||{});

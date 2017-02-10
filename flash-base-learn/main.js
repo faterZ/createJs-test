@@ -3,7 +3,7 @@
  */
 var canvas,img,stage,model,stageWidth,stageHeight,stageScale,view1,cls={};
 
-model = new createjs.EventDispatcher();
+model = new createjs.EventDispatcher();//用来捕获事件的原型
 stageWidth =  document.documentElement.clientWidth;
 stageHeight = document.documentElement.clientHeight;
 stageScale = stageWidth/(750/2);
@@ -46,6 +46,9 @@ function loadCompleteHandler(event)
     model.addEventListener("complete",function (){
         alert("complete");
     })
+    model.addEventListener("textready",function (){
+        alert("textready");
+    })
     view1 = new cls.View1();
     stage.addChild(view1);
 
@@ -55,6 +58,9 @@ function loadCompleteHandler(event)
 }
 function stageBreakHandler(event)
 {
+    /**
+     * 判断浏览器适配手机
+     */
     if(stageWidth!=document.documentElement.clientWidth||stageHeight!= document.documentElement.clientHeight)
     {
         stageWidth =  document.documentElement.clientWidth;
@@ -74,13 +80,19 @@ function stageBreakHandler(event)
         canvas.style.height = 1206/2*stageScale + 'px';
 
     }
+    /**
+     * 更新场景
+     */
     stage.update();
 }
 //view1
+/**
+ * 在闭包里定义一个类
+ */
 (function() {
-    "use strict";
+    "use strict";//严格模式
     function View1(){
-        this.Container_constructor();
+        this.Container_constructor();//父级构造函数调用
 
         this.back = new lib.view1();
         this.addChild(this.back);
@@ -90,6 +102,6 @@ function stageBreakHandler(event)
         }
         //this.con = new createjs.Container() 这里可以是额外处理的对象
     }
-    var p = createjs.extend(View1,createjs.Container);
-    cls.View1 = createjs.promote(View1, "Container");
+    var p = createjs.extend(View1,createjs.Container);//继承与元件
+    cls.View1 = createjs.promote(View1, "Container");继承与元件的构造方法
 }());
