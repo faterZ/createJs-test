@@ -52,8 +52,8 @@ function handleComplete(evt) {
     stage.update();
     createjs.Ticker.setFPS(lib.properties.fps);
     createjs.Ticker.addEventListener("tick", stage);
-    resizeCanvas();
-    bindEvent();
+    resizeCanvas();//自适应宽高
+    bindEvent();//绑定事件
 }
 function bindEvent() {
     canvas.addEventListener("touchstart",function(){
