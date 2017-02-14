@@ -1,29 +1,38 @@
 (function (lib, img, cjs, ss) {
 
 var p; // shortcut to reference prototypes
+lib.webFontTxtFilters = {}; 
 
 // library properties:
 lib.properties = {
-	width: 550,
-	height: 400,
+	width: 750,
+	height: 1206,
 	fps: 24,
 	color: "#FFFFFF",
+	webfonts: {},
 	manifest: [
-		{src:"images/_01_0000_logo01.png?1486801432078", id:"_01_0000_logo01"},
-		{src:"images/_01_0000_text01_01.png?1486801432078", id:"_01_0000_text01_01"},
-		{src:"images/_01_0001_rocket.png?1486801432078", id:"_01_0001_rocket"},
-		{src:"images/_01_0001_text01_02.png?1486801432078", id:"_01_0001_text01_02"},
-		{src:"images/_01_0002_rocketfire.png?1486801432078", id:"_01_0002_rocketfire"},
-		{src:"images/_01_0002_text01_03.png?1486801432078", id:"_01_0002_text01_03"},
-		{src:"images/_01_0003_DREAM.png?1486801432078", id:"_01_0003_DREAM"},
-		{src:"images/_01_0005_plane.png?1486801432078", id:"_01_0005_plane"},
-		{src:"images/_01_0006_BJ.jpg?1486801432078", id:"_01_0006_BJ"},
-		{src:"images/arrow.png?1486801432078", id:"arrow"}
+		{src:"images/_01_0000_logo01.png", id:"_01_0000_logo01"},
+		{src:"images/_01_0000_text01_01.png", id:"_01_0000_text01_01"},
+		{src:"images/_01_0001_rocket.png", id:"_01_0001_rocket"},
+		{src:"images/_01_0001_text01_02.png", id:"_01_0001_text01_02"},
+		{src:"images/_01_0002_rocketfire.png", id:"_01_0002_rocketfire"},
+		{src:"images/_01_0002_text01_03.png", id:"_01_0002_text01_03"},
+		{src:"images/_01_0003_DREAM.png", id:"_01_0003_DREAM"},
+		{src:"images/_01_0005_plane.png", id:"_01_0005_plane"},
+		{src:"images/_01_0006_BJ.jpg", id:"_01_0006_BJ"},
+		{src:"images/arrow.png", id:"arrow"}
 	]
 };
 
 
 
+lib.webfontAvailable = function(family) { 
+	lib.properties.webfonts[family] = true;
+	var txtFilters = lib.webFontTxtFilters && lib.webFontTxtFilters[family] || [];
+	for(var f = 0; f < txtFilters.length; ++f) {
+		txtFilters[f].updateCache();
+	}
+};
 // symbols:
 
 
@@ -382,21 +391,34 @@ p.nominalBounds = new cjs.Rectangle(-38.4,-193.6,788.5,1439.3);
 	this.frame_45 = function() {
 		if(model) model.dispatchEvent("textready");
 	}
+	this.frame_85 = function() {
+		/* Mouse Click 事件
+		单击此指定的元件实例会执行您可在其中添加自己的自定义代码的函数。
+		
+		说明:
+		1. 在以下"// 开始您的自定义代码"行后的新行上添加您的自定义代码。
+		单击此元件实例时，此代码将执行。
+		*/
+		
+		this.slicebtn2.addEventListener("click", fl_MouseClickHandler.bind(this));
+		
+		function fl_MouseClickHandler()
+		{
+			// 开始您的自定义代码
+			// 此示例代码在"输出"面板中显示"已单击鼠标"。
+			alert("已单击鼠标");
+			// 结束您的自定义代码
+		}
+		this.addEventListener("click",function(){
+				//if(model) model.dispatchEvent("completeClick");
+		})
+	}
 	this.frame_116 = function() {
 		this.stop();
-		this.addEventListener("click",function(){
-				if(model) model.dispatchEvent("completeClick");
-		})
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(45).call(this.frame_45).wait(71).call(this.frame_116).wait(86));
-
-	// 图层 2
-	this.btn = new lib.mc1();
-	this.btn.setTransform(375,603);
-
-	this.timeline.addTween(cjs.Tween.get(this.btn).wait(202));
+	this.timeline.addTween(cjs.Tween.get(this).wait(45).call(this.frame_45).wait(40).call(this.frame_85).wait(31).call(this.frame_116).wait(86));
 
 	// jiantou
 	this.instance = new lib.arrow_1();
@@ -484,8 +506,14 @@ p.nominalBounds = new cjs.Rectangle(0,0,750,1245.7);
 (lib.assets = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
+	// 图层 1
+	this.instance = new lib.view1();
+	this.instance.setTransform(703.1,1167.7,1.875,1.875,0,0,0,375,622.8);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = null;
+p.nominalBounds = new cjs.Rectangle(375,603,1406.2,2335.5);
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{}, ss = ss||{});
 var lib, images, createjs, ss;

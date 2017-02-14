@@ -18,6 +18,9 @@ function resizeCanvas(){
     {
         stageScale = stageWidth/(750/2);
     }
+
+
+
     canvas.style.width = 750/2*stageScale + 'px';
     canvas.style.height = 1206/2*stageScale + 'px';
 }
@@ -39,11 +42,11 @@ function init(){
  * 资源加载完毕
  */
 function loadCompleteHandler(){
-   view1= new lib.view1();
-   var view2 = new lib.view2();
-   viewList = [view1,view2];
-   stage.addChild(viewList[0]);
-   stage.addChild(viewList[1]);
+    var view1= new lib.view1();
+    var view2 = new lib.view2();
+    viewList = [view1,view2];
+    stage.addChild(viewList[0]);
+    stage.addChild(viewList[1]);
     viewList[0].y=0;
     viewList[1].y=1206;
     viewList[0].gotoAndPlay(0);
