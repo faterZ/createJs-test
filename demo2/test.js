@@ -72,19 +72,31 @@ function bindEvent() {
 
 }
 function bindTap(obj,cb){
-    obj.addEventListener("pressdown",function(){
-
+    obj.on("mousedown",function(){
+        var listener = obj.on("pressup",function(){
+            cb()
+        })
+        setTimeout(function () {
+            obj.off("pressup",listener);
+        },300)
     })
+
 }
 (function() {
     function ContentView1() {
         this.Container_constructor();
         this.back = new lib.homeview();
         this.addChild(this.back);
-        this.back.instance.addEventListener("pressup", function()
+        bindTap(this.back.instance,function()
         {
             this.back.gotoAndPlay(125);
+
         }.bind(this));
+        var text1 =  new createjs.Text('text', '20px Arial', '#ff7700');
+        text1.textAlign='center';
+        text1.x = this.back.instance.width/2
+        this.back.instance.addChild(text1)
+
     }
     var p = createjs.extend(ContentView1, createjs.Container);
     View.ContentView1 = createjs.promote(ContentView1, "Container");
