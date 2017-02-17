@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+#animation_container {
+    position:absolute;
+    margin:auto;
+    left:0;right:0;
+    top:0;bottom:0;
+    background-color:rgba(0, 0, 0, 1.00);
+    width:750px; height:1206px
+}
+#canvas{
+    position: absolute;
+    display: block;
+}
+#video{
+    display: block;
+    position: absolute;
+    width: 1334px;
+    height: 750px;
+    x: 0;
+    y: 0;
+    transform-origin: 0% 0% 0px;
+    visibility: visible;
+    margin-left: 100%;
+    opacity: 1;
+    transform: matrix(0, 1, -1, 0, 0, 0);
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body onload="init()">
+<div id="animation_container" >
+    <video preload="load" data-link="http://wag.i-h5.cn/dj/wyf/video/wb.mp4"  playsinline x-webkit-airplay="true" airplay="allow" webkit-playsinline x5-video-player-type="h5"  id="video"  src="./video/movie.mp4"></video>
+    <canvas id="canvas" width="750" height="1334"></canvas>
+    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:750px; height:1206px; position: absolute; left: 0px; top: 0px; display: block;">
+    </div>
+</div>
+<script src="./lib/createjs.js"></script>
+<script src="demo3.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

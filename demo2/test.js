@@ -42,16 +42,18 @@ function handleComplete(evt) {
     ss["demo2_atlas_"] = queue.getResult("demo2_atlas_");
     stage = new createjs.Stage(canvas);
     createjs.Touch.enable(stage);
-    var view1 = new View.ContentView1()
-    view1.x=0;
-    view1.y=0
+    viewList[0] = new View.ContentView1()
+    viewList[0].x=0;
+    viewList[0].y=0
     
-    viewList[0] = view1
     stage.addChild(viewList[0])
     bindEvent();//绑定事件
 
     // var view2 = new lib.homeview()
-    // viewList[1] = view2
+    var data = {
+        title:"问题一"
+    }
+    viewList[1] = new View.ContentView2(data);
     createjs.Ticker.setFPS(40);
     createjs.Ticker.addEventListener("tick", stage);
 }
@@ -87,17 +89,46 @@ function bindTap(obj,cb){
         this.Container_constructor();
         this.back = new lib.homeview();
         this.addChild(this.back);
-        bindTap(this.back.instance,function()
-        {
-            this.back.gotoAndPlay(125);
 
-        }.bind(this));
-        var text1 =  new createjs.Text('text', '20px Arial', '#ff7700');
-        text1.textAlign='center';
-        text1.x = this.back.instance.width/2
-        this.back.instance.addChild(text1)
+        // this.back.instance.on("click",function(){
+        //     this.back.gotoAndPlay(125);
+        // }.bind(this))
+        // bindTap(this.back.instance,function()
+        // {
+        //     this.back.gotoAndPlay(125);
+        //
+        // }.bind(this));
+
+        // var text1 =  new createjs.Text('text', '20px Arial', '#ff7700');
+        // text1.textAlign='center';
+        // text1.x = this.back.instance.width/2
+        // this.back.instance.addChild(text1)
 
     }
     var p = createjs.extend(ContentView1, createjs.Container);
     View.ContentView1 = createjs.promote(ContentView1, "Container");
+})();
+(function() {
+    function ContentView2(data) {
+        this.Container_constructor();
+        this.back = new lib.selectview();
+        this.addChild(this.back);
+        this.back.title.content.text = data.title;
+        // this.back.instance.on("click",function(){
+        //     this.back.gotoAndPlay(125);
+        // }.bind(this))
+        // bindTap(this.back.instance,function()
+        // {
+        //     this.back.gotoAndPlay(125);
+        //
+        // }.bind(this));
+
+        // var text1 =  new createjs.Text('text', '20px Arial', '#ff7700');
+        // text1.textAlign='center';
+        // text1.x = this.back.instance.width/2
+        // this.back.instance.addChild(text1)
+
+    }
+    var p = createjs.extend(ContentView2, createjs.Container);
+    View.ContentView2 = createjs.promote(ContentView2, "Container");
 })();
